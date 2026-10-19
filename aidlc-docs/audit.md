@@ -115,3 +115,8 @@ Si, apruebo las historias"
 **Entrada del usuario:** "Si, procede"
 **Acción de la IA:** requisitos no funcionales aprobados. Diseño NFR de U0 sin preguntas: `construction/u0-fundacion/nfr-design/` con 10 patrones (presupuesto, enrutador de modelos, salidas validadas, reintentos, aprobación idempotente, fuentes como datos, configuración y secretos, registros, permisos mínimos, pruebas sin costo) y sus componentes lógicos.
 **Estado:** esperando aprobación del diseño NFR.
+
+## 2026-10-19 · Aprobación del diseño NFR de U0
+**Entrada del usuario:** "si"
+**Acción de la IA:** diseño NFR aprobado. Diseño de infraestructura de U0: stack `DocumentadorBase` (presupuesto, S3, DynamoDB, parámetros SSM, política IAM operador), pruebas de plantilla y pasos de despliegue. Dos datos de despliegue pedidos (I1 correo, I2 acceso AWS), no bloqueantes.
+**Estado:** esperando aprobación del diseño de infraestructura.

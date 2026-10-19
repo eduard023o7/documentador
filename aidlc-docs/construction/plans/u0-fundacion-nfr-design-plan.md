@@ -5,4 +5,4 @@
 ## Pasos
 - [x] Escribir `nfr-design/nfr-design-patterns.md` (patrones por requisito)
 - [x] Escribir `nfr-design/logical-components.md` (piezas lógicas que implementan los patrones)
-- [ ] Presentar para aprobación
+- [x] Presentar para aprobación (aprobado el 2026-10-19)
