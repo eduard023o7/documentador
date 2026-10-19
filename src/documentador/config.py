@@ -28,6 +28,7 @@ CACHE_SECONDS = 300
 _ENV_OVERRIDES = {
     "github/token": GITHUB_TOKEN_ENV,
     "github/repo": "DOCUMENTADOR_GITHUB_REPO",
+    "github/rama": "DOCUMENTADOR_GITHUB_RAMA",
     "tabla": "DOCUMENTADOR_TABLA",
     "bucket": "DOCUMENTADOR_BUCKET",
 }

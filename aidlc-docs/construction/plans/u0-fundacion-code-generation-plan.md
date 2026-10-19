@@ -62,6 +62,6 @@ Cada paso termina con sus pruebas pasando. Al final se ejecutan `ruff`, `mypy` y
 ### 11. Cierre
 - [x] `ruff`, `mypy` (estricto en `core/`), `pytest` con cobertura ≥ 90 % en `core/`
 - [x] Resumen de código en `construction/u0-fundacion/code/code-summary.md` con trazabilidad historia → archivos → pruebas
-- [ ] Presentar para aprobación (en curso)
+- [x] Presentar para aprobación (aprobado el 2026-10-19)
 
 **Fuera de este plan:** desplegar en tu cuenta, crear el token y probar con la plantilla corporativa (los haces tú en la etapa de build y pruebas, con la guía).

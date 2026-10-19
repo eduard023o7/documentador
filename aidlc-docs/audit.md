@@ -134,3 +134,8 @@ Si, apruebo"
 **Entrada del usuario:** "si"
 **Acción de la IA:** generación de código de U0 completa según el plan de 11 pasos: paquete `documentador` (núcleo, adaptadores, costo, publicación, CLI `doc`), contenido inicial del marco, plantilla Word genérica, stack CDK `DocumentadorBase` y guía de despliegue. 143 pruebas pasan, cobertura 96 % (núcleo 95–98 %), ruff y mypy sin errores. Verificación visual del PDF: la marca "Borrador" no aparecía con el XML inicial y se corrigió. Ajustes respecto del diseño en `construction/u0-fundacion/code/code-summary.md`.
 **Estado:** esperando aprobación del código.
+
+## 2026-10-19 · Aprobación del código de U0 e inicio de build y pruebas
+**Entrada del usuario:** "si"
+**Acción de la IA:** código de U0 aprobado. Ajuste menor: la rama de GitHub se puede indicar con `DOCUMENTADOR_GITHUB_RAMA` (main aún no existe). 7 pruebas de integración opcionales (`-m integration`, sin escribir en GitHub). Instrucciones y resumen en `construction/build-and-test/`. Verificación local: build, ruff, mypy y 144 pruebas en verde.
+**Estado:** esperando que el usuario despliegue y ejecute las verificaciones en su cuenta.

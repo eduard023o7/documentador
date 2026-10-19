@@ -124,6 +124,10 @@ class TestSettings:
         settings = Settings(local_file=None, ssm_client=self._ssm())
         assert settings.get("github/token") == "ghp_env"
 
+    def test_env_overrides_branch(self, monkeypatch):
+        monkeypatch.setenv("DOCUMENTADOR_GITHUB_RAMA", "claude/rama")
+        assert Settings(local_file=None, ssm_client=self._ssm()).get("github/rama", "main") == "claude/rama"
+
     def test_missing_parameter(self):
         settings = Settings(local_file=None, ssm_client=self._ssm())
         assert settings.get("no/existe", default="d") == "d"

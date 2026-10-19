@@ -79,7 +79,9 @@ def test_verify(monkeypatch, tmp_path):
         ],
         BillingMode="PAY_PER_REQUEST",
     )
-    monkeypatch.setattr(cli.GitHubRepository, "list_files", lambda self, prefix="", ref=None: ["marco/tipos.yaml"])
+    monkeypatch.setattr(
+        cli.GitHubRepository, "list_files", lambda self, prefix="", ref=None: ["marco/tipos.yaml"]
+    )
     monkeypatch.chdir(tmp_path)  # no config/local.yaml here
     result = runner.invoke(app, ["estado", "verificar", "--perfil", str(MARCO)])
     assert result.exit_code == 0, result.output
