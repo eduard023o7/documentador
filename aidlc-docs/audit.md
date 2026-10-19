@@ -92,3 +92,9 @@ Si, apruebo las historias"
 **Entrada del usuario:** "Si"
 **Acción de la IA:** unidades aprobadas; termina INCEPTION. Inicio de CONSTRUCTION con U0 Fundación: plan de diseño funcional en `construction/plans/u0-fundacion-functional-design-plan.md` con cinco decisiones y cuatro preguntas (F1–F4).
 **Estado:** esperando respuestas a F1–F4.
+
+## 2026-10-19 · Respuestas al plan de diseño funcional de U0
+**Entrada del usuario:** "Recomendado en todas"
+**Interpretación de la IA:** F1=A, F2=B, F3=A. F4 no tenía opción recomendada → se pregunta de nuevo; el diseño funcional no depende de ella.
+**Acción de la IA:** diseño funcional de U0 en `construction/u0-fundacion/functional-design/` (domain-entities, business-rules con BR-U0-01 a 32, business-logic-model con cobertura de HU-0.1 a 0.7).
+**Estado:** esperando aprobación del diseño funcional y confirmación de F4.

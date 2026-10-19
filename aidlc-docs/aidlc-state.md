@@ -3,7 +3,7 @@
 **Proyecto:** documentador — MVP plataforma de lineamientos y estándares
 **Tipo:** greenfield
 **Inicio:** 2026-10-19
-**Etapa actual:** CONSTRUCTION · U0 Fundación · Diseño funcional — esperando respuestas a `construction/plans/u0-fundacion-functional-design-plan.md`
+**Etapa actual:** CONSTRUCTION · U0 Fundación · Diseño funcional listo — esperando aprobación y confirmación de F4
 
 ## Detección del workspace
 - Repositorio vacío (sin commits ni código previo) → greenfield; se omite ingeniería inversa.
@@ -24,7 +24,7 @@
 Etapas por unidad según `inception/plans/execution-plan.md`.
 
 **U0 Fundación**
-- [ ] Diseño funcional — plan con preguntas F1–F4
+- [x] Diseño funcional — listo (pendiente de aprobación)
 - [ ] Requisitos no funcionales (para todo el MVP)
 - [ ] Diseño NFR
 - [ ] Diseño de infraestructura

@@ -22,34 +22,34 @@ A) Cargo como **propuesta inicial** los del doc (INF infraestructura, DAT datos,
 B) Dejo la lista vacía; los ingresas tú antes de U1
 X) Otro (indica la lista)
 
-[Answer]:
+[Answer]: A — "Recomendado en todas"
 
 ### F2. Principios corporativos (`principios.md`), que guían a todos los agentes.
 A) Los tengo: te los paso (pégalos en el chat o súbelos al repositorio)
 B) Aún no: dejo un borrador con los dos que menciona el doc (API-first, seguridad desde el diseño) más espacio para completar antes de U1 (Recomendado si no los tienes a mano)
 X) Otro (explica)
 
-[Answer]:
+[Answer]: B — "Recomendado en todas"
 
 ### F3. Sitios web aprobados como fuente (`fuentes.yaml`). Se necesitan en U1, no en U0.
 A) Dejo un borrador con fuentes oficiales típicas para revisar (documentación de AWS y Azure, AWS Well-Architected, TOGAF, NIST, ISO 27001 como referencia, OWASP) con su jerarquía de autoridad (Recomendado)
 B) Te paso la lista
 X) Otro (explica)
 
-[Answer]:
+[Answer]: A — "Recomendado en todas"
 
 ### F4. Plantilla Word corporativa
 A) La subo al repositorio en `contenido/marco/plantilla-word/corporativa.docx` (o la adjunto en el chat)
 B) Aún no la tengo a mano: construyo y pruebo la conversión con una plantilla genérica y cambiamos a la corporativa cuando la tengas (la puerta de U0 queda pendiente de ese cambio)
 X) Otro (explica)
 
-[Answer]:
+[Answer]: Pendiente: F4 no tenía opción recomendada. Se diseña para ambas; se confirma antes de generar código
 
 ## Pasos
 
-- [ ] Recibir respuestas F1–F4
-- [ ] Escribir `domain-entities.md`
-- [ ] Escribir `business-rules.md`
-- [ ] Escribir `business-logic-model.md`
-- [ ] Verificar cobertura de HU-0.1 a HU-0.7
+- [x] Recibir respuestas F1–F4 (F4 pendiente de confirmar)
+- [x] Escribir `domain-entities.md`
+- [x] Escribir `business-rules.md`
+- [x] Escribir `business-logic-model.md`
+- [x] Verificar cobertura de HU-0.1 a HU-0.7
 - [ ] Presentar para aprobación
