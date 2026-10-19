@@ -25,30 +25,30 @@ A) **En tu equipo**, con un comando: los agentes llaman a Bedrock desde tu máqu
 B) En AgentCore Runtime desde U1; el comando local solo los dispara
 X) Otro (explica)
 
-[Answer]:
+[Answer]: A
 
 ### D2. ¿Cómo se revisa y aprueba en las fases 1 a 3, antes de la web?
 A) **Pull request en GitHub**: cada propuesta (mapa, borrador, paquete) llega como PR; revisas los cambios, comentas por línea y apruebas con un comando que registra tu nombre y fusiona. GitHub te da gratis la vista de diferencias y los comentarios (Recomendado)
 B) Archivo de revisión en Markdown: editas un archivo con "aceptar/rechazar" por regla y ejecutas un comando
 X) Otro (explica)
 
-[Answer]:
+[Answer]: A
 
 ### D3. ¿Dónde vive el estado de trabajo (ejecuciones, observaciones, aprobaciones, casos de prueba)?
 A) **DynamoDB** desde U1 (bajo demanda, centavos al mes); lo mismo que usará la web (Recomendado)
 B) Archivos JSON en el repositorio hasta U4, y DynamoDB después
 X) Otro (explica)
 
-[Answer]:
+[Answer]: A
 
 ## Pasos
 
-- [ ] Recibir respuestas a D1–D3
-- [ ] Escribir `components.md`
-- [ ] Escribir `component-methods.md`
-- [ ] Escribir `services.md`
-- [ ] Escribir `component-dependency.md`
-- [ ] Escribir `data-model.md`
-- [ ] Escribir `repo-structure.md`
-- [ ] Verificar que cada historia tiene un componente responsable
-- [ ] Presentar para aprobación
+- [x] Recibir respuestas a D1–D3
+- [x] Escribir `components.md`
+- [x] Escribir `component-methods.md`
+- [x] Escribir `services.md`
+- [x] Escribir `component-dependency.md`
+- [x] Escribir `data-model.md`
+- [x] Escribir `repo-structure.md`
+- [x] Verificar que cada historia tiene un componente responsable
+- [ ] Presentar para aprobación (en curso)

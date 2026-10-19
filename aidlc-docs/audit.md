@@ -76,3 +76,9 @@ Si, apruebo las historias"
 **Entrada del usuario:** "Si"
 **Acción de la IA:** plan de ejecución aprobado. Inicio del diseño de aplicación: plan en `inception/plans/application-design-plan.md` con cuatro decisiones propuestas y tres preguntas (D1–D3).
 **Estado:** esperando respuestas a D1–D3.
+
+## 2026-10-19 · Respuestas al plan de diseño de aplicación
+**Entrada del usuario:** "A A A"
+**Interpretación de la IA:** D1=A (flujos en el equipo del Admin hasta U4), D2=A (revisión con pull requests de GitHub antes de la web), D3=A (estado en DynamoDB desde U1).
+**Acción de la IA:** diseño de aplicación en `inception/application-design/` (components, component-methods, services, component-dependency, data-model, repo-structure). Verificado por script: toda historia tiene un componente responsable. El "Publicador" del doc original queda como componente determinista (sin IA).
+**Estado:** esperando aprobación del diseño de aplicación.
