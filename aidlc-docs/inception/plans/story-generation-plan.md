@@ -13,34 +13,34 @@ B) Por flujo de trabajo (mapa, documento, nueva necesidad) más una épica de vi
 C) Por pantalla de la web
 X) Otro (explica)
 
-[Answer]:
+[Answer]: A — "A"
 
 ### H2. Personas. Hay un solo usuario admin compartido, pero cumple papeles distintos. ¿Cómo las modelamos?
 A) Una sola cuenta con tres "sombreros": **Administrador del marco** (define el perfil y los insumos), **Arquitecto solicitante** (pide mapas, redacciones y cambios) y **Revisor** (revisa, versiona y aprueba). Ayuda a que las historias digan quién hace qué y deja listo separar usuarios después (Recomendado)
 B) Una sola persona: "Admin"
 X) Otro (explica)
 
-[Answer]:
+[Answer]: B — "B"
 
 ### H3. Formato de los criterios de aceptación
 A) Dado / Cuando / Entonces, verificables y citando los requisitos (RF/RNF) (Recomendado: se convierten directo en pruebas)
 B) Lista simple de condiciones
 X) Otro (explica)
 
-[Answer]:
+[Answer]: A — "A"
 
 ### H4. Tamaño de las historias
 A) Cada historia se construye y prueba en 1–2 días; las grandes se parten (Recomendado para una persona con IA)
 B) Historias grandes, una por capacidad (menos historias, más criterios)
 X) Otro (explica)
 
-[Answer]:
+[Answer]: A — "A"
 
 ## Pasos
 
-- [ ] Recibir respuestas a H1–H4
-- [ ] Escribir `personas.md`
-- [ ] Escribir `stories.md`: épicas, historias "Como… quiero… para…", criterios de aceptación, prioridad y requisitos que cubre
-- [ ] Verificar cobertura: cada RF y RNF aparece en al menos una historia (tabla de trazabilidad)
-- [ ] Verificar INVEST: independientes, negociables, valiosas, estimables, pequeñas y comprobables
-- [ ] Presentar para aprobación
+- [x] Recibir respuestas a H1–H4
+- [x] Escribir `personas.md`
+- [x] Escribir `stories.md`: épicas, historias "Como… quiero… para…", criterios de aceptación, prioridad y requisitos que cubre
+- [x] Verificar cobertura: cada RF y RNF aparece en al menos una historia (tabla de trazabilidad)
+- [x] Verificar INVEST: independientes, negociables, valiosas, estimables, pequeñas y comprobables
+- [ ] Presentar para aprobación (en curso)

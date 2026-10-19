@@ -3,7 +3,7 @@
 **Proyecto:** documentador — MVP plataforma de lineamientos y estándares
 **Tipo:** greenfield
 **Inicio:** 2026-10-19
-**Etapa actual:** INCEPTION · Historias de usuario — plan listo, esperando respuestas a `inception/plans/story-generation-plan.md`
+**Etapa actual:** INCEPTION · Historias de usuario listas — esperando aprobación
 
 ## Detección del workspace
 - Repositorio vacío (sin commits ni código previo) → greenfield; se omite ingeniería inversa.
@@ -15,7 +15,7 @@
 - [x] Detección del workspace
 - [-] Ingeniería inversa (no aplica: greenfield)
 - [x] Análisis de requisitos — v3 aprobada el 2026-10-19
-- [ ] Historias de usuario — plan con preguntas H1–H4
+- [x] Historias de usuario — 47 historias en 6 épicas (pendiente de aprobación)
 - [ ] Planificación del flujo de trabajo
 - [ ] Diseño de aplicación (condicional)
 - [ ] Generación de unidades de trabajo (condicional)

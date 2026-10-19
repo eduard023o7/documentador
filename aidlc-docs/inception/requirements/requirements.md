@@ -1,6 +1,6 @@
 # Requisitos — MVP plataforma de lineamientos y estándares
 
-**Estado:** v3 (2026-10-19), completa. Incorpora todas las respuestas de `requirement-verification-questions.md` y `requirement-followup-questions.md`. Pendiente de aprobación.
+**Estado:** v3 (2026-10-19), completa. Incorpora todas las respuestas de `requirement-verification-questions.md` y `requirement-followup-questions.md`. Aprobada el 2026-10-19.
 
 ## 0. Decisiones tomadas
 
@@ -143,4 +143,4 @@ Guías, procedimientos y catálogos · publicación web para toda la empresa · 
 1. El plan de fases menciona **Azure Repos** en la fase 4; se resolvió: **GitHub** en el MVP (S1).
 2. El insumo define dos repositorios; se resolvió con un **monorepo** (Q1).
 3. El insumo fija un orden de redacción por el grafo; la decisión de redactar **bajo demanda** cambia ese orden a recomendación; se resolvió con advertencia + revalidación (S3, RF-41).
-4. El insumo habla de cinco arquitectos aprobando por dominio; se resolvió con un usuario admin compartido en el MVP (S4); trazabilidad del revisor pendiente (S9).
+4. El insumo habla de cinco arquitectos aprobando por dominio; se resolvió con un usuario admin compartido en el MVP (S4); el revisor firma con su nombre (S9, RF-42).

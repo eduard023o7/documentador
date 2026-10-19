@@ -51,3 +51,12 @@ S14 recomendado"
 **Entrada del usuario:** "si, procede"
 **Acción de la IA:** requisitos v3 aprobados. Inicio de la etapa de historias de usuario: plan en `inception/plans/story-generation-plan.md` con cuatro preguntas (H1–H4).
 **Estado:** esperando respuestas a H1–H4.
+
+## 2026-10-19 · Respuestas al plan de historias
+**Entrada del usuario:** "A
+B
+A
+A"
+**Interpretación de la IA:** H1=A (épicas por fase), H2=B (persona única Admin), H3=A (Dado/Cuando/Entonces), H4=A (historias de 1–2 días).
+**Acción de la IA:** `user-stories/personas.md` y `user-stories/stories.md` generados; tabla de trazabilidad verificada por script: todos los RF y RNF cubiertos.
+**Estado:** esperando aprobación de las historias.
