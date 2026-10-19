@@ -1,0 +1,36 @@
+# Tipos de documento del mapa y test de clasificación (RF-01, RF-02).
+# Los principios corporativos (nivel 0) no son documentos: están en principios.md.
+version_esquema: 1
+tipos:
+  - codigo: FUN
+    clave: fundacional
+    nombre: Fundacional
+    nivel: 1
+    padre_permitido: dominio
+    requiere_tecnologia: false
+    descripcion: Clasificaciones y criterios que usan todos los dominios. Se usa como referencia en otros documentos.
+  - codigo: LIN
+    clave: lineamiento
+    nombre: Lineamiento
+    nivel: 2
+    padre_permitido: dominio
+    requiere_tecnologia: false
+    descripcion: Qué se exige y por qué. No depende de la tecnología; se verifica en revisión de diseño.
+  - codigo: EST
+    clave: estandar
+    nombre: Estándar
+    nivel: 3
+    padre_permitido: lineamiento
+    requiere_tecnologia: true
+    descripcion: Cómo se cumple con una tecnología concreta. Se verifica con configuración o herramienta, con resultado sí/no.
+
+# Se aplica a cada tema en este orden; la primera respuesta "sí" decide.
+test_clasificacion:
+  - pregunta: ¿Lo usan como criterio común varios dominios y no exige nada por sí mismo?
+    resultado: fundacional
+  - pregunta: ¿Seguiría siendo válido si mañana cambiamos de proveedor o tecnología?
+    resultado: lineamiento
+  - pregunta: ¿Nombra un producto o fija valores comprobables con una herramienta?
+    resultado: estandar
+  - pregunta: ¿Describe pasos de ejecución o cambia más de una vez al año?
+    resultado: fuera_mvp

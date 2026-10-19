@@ -1,0 +1,7 @@
+# Versionado mayor.menor.parche de cada documento (RF-16).
+version_esquema: 1
+reglas:
+  mayor: Cambia o elimina una regla DEBE.
+  menor: Agrega reglas o cambia reglas DEBERÍA o PUEDE.
+  parche: Mejora la redacción sin cambiar el significado.
+version_inicial: 1.0.0

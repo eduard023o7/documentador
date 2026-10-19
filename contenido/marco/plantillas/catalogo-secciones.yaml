@@ -1,0 +1,39 @@
+# Catálogo cerrado de secciones. Las plantillas por tipo y las secciones opcionales
+# de cada dominio solo pueden usar secciones de este catálogo.
+version_esquema: 1
+secciones:
+  - clave: proposito
+    titulo: Propósito
+    instrucciones: Una o dos frases sobre para qué existe el documento.
+  - clave: alcance
+    titulo: Alcance y aplicabilidad
+    instrucciones: Qué incluye y qué excluye explícitamente, y a quién aplica.
+  - clave: relacionados
+    titulo: Documentos relacionados
+    generada: true
+  - clave: definiciones
+    titulo: Definiciones
+    instrucciones: Solo términos que no estén en el glosario corporativo.
+  - clave: reglas
+    titulo: Reglas
+    instrucciones: Cada regla con ID, nivel, enunciado, justificación, cómo se verifica y fuentes. Lo que define otro documento se referencia por su ID.
+    contiene_reglas: true
+  - clave: especificacion
+    titulo: Especificación técnica
+    instrucciones: Valores, configuraciones y parámetros concretos de la tecnología.
+  - clave: excepciones
+    titulo: Excepciones
+    instrucciones: Cómo se solicita y aprueba una excepción.
+  - clave: cumplimiento
+    titulo: Cumplimiento y verificación
+    instrucciones: Cómo se comprueba que se cumple el documento.
+  - clave: referencias
+    titulo: Referencias
+    generada: true
+  - clave: control_cambios
+    titulo: Control de cambios
+    generada: true
+  - clave: mapeo_iso27001
+    titulo: Mapeo a controles ISO 27001
+    instrucciones: Controles de ISO/IEC 27001 que cubre cada regla.
+    opcional: true

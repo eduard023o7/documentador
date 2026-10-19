@@ -1,0 +1,12 @@
+# Estados de un documento y transiciones permitidas (RF-15).
+version_esquema: 1
+estados: [propuesto, en_redaccion, en_validacion, en_revision, aprobado, obsoleto]
+transiciones:
+  propuesto: [en_redaccion, obsoleto]
+  en_redaccion: [en_validacion]
+  en_validacion: [en_redaccion, en_revision]
+  en_revision: [en_redaccion, aprobado]
+  aprobado: [en_redaccion, obsoleto]   # una nueva versión vuelve a redacción
+  obsoleto: []
+revision_periodica_meses: 12
+aprobaciones_requeridas: 1             # MVP: usuario admin compartido

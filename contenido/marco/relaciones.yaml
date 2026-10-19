@@ -1,0 +1,16 @@
+# Tipos de relación entre documentos (RF-06). El mapa es una red: un solo padre
+# y el resto de conexiones son referencias tipadas, nunca copias.
+version_esquema: 1
+relaciones:
+  - clave: deriva_de
+    significado: Es el padre del documento.
+    implicita: true       # se expresa con el campo "padre" de la ficha
+  - clave: depende_de
+    significado: Usa algo definido en otro documento.
+    aciclica: true
+  - clave: complementa
+    significado: Cubre un tema vecino.
+  - clave: reemplaza
+    significado: Sustituye a un documento anterior, que pasa a obsoleto.
+# Ante un conflicto manda el de mayor precedencia.
+precedencia: [principio, fundacional, lineamiento, estandar]

@@ -1,0 +1,9 @@
+# Formato de los IDs de documento y de regla (RF-05).
+version_esquema: 1
+documento:
+  fundacional: "FUN-{dominio}-{n:03d}"
+  lineamiento: "LIN-{dominio}-{n:03d}"
+  estandar: "EST-{dominio}-{tecnologia}-{n:03d}"
+regla: "{documento}.R{n:02d}"
+tecnologia:
+  patron: "^[A-Z0-9]{2,6}$"   # p. ej. AWS, AZ, K8S

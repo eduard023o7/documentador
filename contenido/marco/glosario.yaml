@@ -1,0 +1,6 @@
+# Glosario corporativo: términos aprobados y sinónimos que no se usan.
+version_esquema: 1
+terminos:
+  - termino: landing zone
+    definicion: "POR DEFINIR (opcional): definición corporativa"
+    prohibidos: [zona de aterrizaje]

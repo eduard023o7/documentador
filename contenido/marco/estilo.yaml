@@ -1,0 +1,7 @@
+# Guía de estilo de redacción.
+version_esquema: 1
+tono: impersonal
+persona: tercera
+regla_max_oraciones: 2
+formato_fecha: AAAA-MM-DD
+idioma: es

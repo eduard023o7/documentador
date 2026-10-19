@@ -1,0 +1,7 @@
+# Contexto de arquitectura empresarial (insumo para proponer dominios y documentos, HU-1.1).
+version_esquema: 1
+empresas: []               # POR DEFINIR: empresas del grupo
+entorno_ot_it: ""          # POR DEFINIR: descripción del entorno OT/IT
+tecnologias_por_dominio:   # POR DEFINIR: completar
+  INF: [AWS]
+diagrama: ""               # POR DEFINIR (opcional): ruta al diagrama del framework

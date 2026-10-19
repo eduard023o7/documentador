@@ -1,0 +1,9 @@
+# Niveles de obligatoriedad de las reglas.
+version_esquema: 1
+niveles:
+  - clave: DEBE
+    significado: Obligatorio. Su incumplimiento requiere una excepción aprobada.
+  - clave: DEBERÍA
+    significado: Recomendado. Apartarse requiere justificarlo en el diseño.
+  - clave: PUEDE
+    significado: Opcional. Práctica aceptada.

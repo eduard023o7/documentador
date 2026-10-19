@@ -1,0 +1,27 @@
+# Fuentes aprobadas y jerarquía de autoridad (borrador F3=A, para revisar).
+version_esquema: 1
+jerarquia: [documentacion_oficial, marco_referencia, articulo_tecnico]
+sitios:
+  - nombre: AWS Documentation
+    url: https://docs.aws.amazon.com/
+    tipo: documentacion_oficial
+    rutas: [/wellarchitected/, /controltower/, /organizations/, /kms/]
+  - nombre: Microsoft Learn (Azure)
+    url: https://learn.microsoft.com/
+    tipo: documentacion_oficial
+    rutas: [/azure/well-architected/, /azure/cloud-adoption-framework/]
+  - nombre: The Open Group (TOGAF)
+    url: https://pubs.opengroup.org/
+    tipo: marco_referencia
+    rutas: [/togaf-standard/]
+  - nombre: NIST Computer Security Resource Center
+    url: https://csrc.nist.gov/
+    tipo: marco_referencia
+  - nombre: OWASP
+    url: https://owasp.org/
+    tipo: marco_referencia
+  - nombre: ISO/IEC 27001 (solo referencia de controles)
+    url: https://www.iso.org/standard/27001
+    tipo: marco_referencia
+# Origen que se registra para cada fuente cargada (RNF-07).
+origenes: [gartner, proveedor, marco_publico, interno]

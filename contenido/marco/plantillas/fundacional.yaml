@@ -1,0 +1,14 @@
+# Plantilla de documento fundacional. El orden de las secciones es el orden en el documento.
+version_esquema: 1
+tipo: fundacional
+version: 1.0.0
+secciones:
+  - {clave: proposito, obligatoria: true}
+  - {clave: alcance, obligatoria: true}
+  - {clave: relacionados, obligatoria: true}
+  - {clave: definiciones, obligatoria: false}
+  - {clave: reglas, obligatoria: true}
+  - {clave: excepciones, obligatoria: true}
+  - {clave: cumplimiento, obligatoria: true}
+  - {clave: referencias, obligatoria: true}
+  - {clave: control_cambios, obligatoria: true}

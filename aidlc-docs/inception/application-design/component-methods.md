@@ -88,7 +88,7 @@ def reject(pr: PullRequestRef, reviewer: str, reason: str) -> None
 ```python
 class ContentRepository(Protocol):
     def read(self, path: str, ref: str = "main") -> str
-    def list(self, prefix: str, ref: str = "main") -> list[str]
+    def list_files(self, prefix: str, ref: str = "main") -> list[str]
     def create_branch(self, name: str, base: str = "main") -> None
     def commit(self, branch: str, files: dict[str, str | None], message: str, author: Author) -> str
     def open_pull_request(self, branch: str, title: str, body: str) -> PullRequestRef

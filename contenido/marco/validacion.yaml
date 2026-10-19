@@ -1,0 +1,19 @@
+# Criterios de validación y su severidad. "bloqueante" impide aprobar.
+version_esquema: 1
+criterios:
+  - {clave: cita_inexistente, severidad: bloqueante}
+  - {clave: referencia_rota, severidad: bloqueante}
+  - {clave: padre_faltante_o_invalido, severidad: bloqueante}
+  - {clave: ciclo_depende_de, severidad: bloqueante}
+  - {clave: id_repetido_o_invalido, severidad: bloqueante}
+  - {clave: seccion_obligatoria_faltante, severidad: bloqueante}
+  - {clave: contradiccion_padre_o_dependencia, severidad: bloqueante}
+  - {clave: relaja_regla_dominio_dueno, severidad: bloqueante}
+  - {clave: tema_duplicado, severidad: bloqueante}
+  - {clave: regla_redundante, severidad: advertencia}
+  - {clave: estilo_irregular, severidad: advertencia}
+  - {clave: regla_demasiado_larga, severidad: advertencia}
+  - {clave: termino_fuera_de_glosario, severidad: advertencia}
+  - {clave: dependencias_abiertas, severidad: advertencia}
+# Miradas que aplica el validador a cada documento.
+miradas: [datos, ia, infraestructura, seguridad, arquitectura_empresarial]

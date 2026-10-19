@@ -129,3 +129,8 @@ Si, apruebo"
 **Interpretación de la IA:** I1=A (correo de la cuenta), I2=B (usuario IAM con llaves); diseño de infraestructura aprobado.
 **Acción de la IA:** plan de generación de código de U0 en `construction/plans/u0-fundacion-code-generation-plan.md` (11 pasos con casillas).
 **Estado:** esperando aprobación del plan de código.
+
+## 2026-10-19 · Aprobación del plan de código y generación de código de U0
+**Entrada del usuario:** "si"
+**Acción de la IA:** generación de código de U0 completa según el plan de 11 pasos: paquete `documentador` (núcleo, adaptadores, costo, publicación, CLI `doc`), contenido inicial del marco, plantilla Word genérica, stack CDK `DocumentadorBase` y guía de despliegue. 143 pruebas pasan, cobertura 96 % (núcleo 95–98 %), ruff y mypy sin errores. Verificación visual del PDF: la marca "Borrador" no aparecía con el XML inicial y se corrigió. Ajustes respecto del diseño en `construction/u0-fundacion/code/code-summary.md`.
+**Estado:** esperando aprobación del código.

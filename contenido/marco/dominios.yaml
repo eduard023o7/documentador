@@ -1,0 +1,35 @@
+# Dominios del mapa (RF-03). Propuesta inicial tomada del doc de definición (F1=A):
+# la IA los evalúa en U1 y el revisor decide los definitivos.
+version_esquema: 1
+dominios:
+  - codigo: INF
+    nombre: Infraestructura
+    estado: propuesto
+    aprobador: admin
+    mirada: Disponibilidad, escalabilidad, operación y costo de la plataforma.
+  - codigo: DAT
+    nombre: Datos
+    estado: propuesto
+    aprobador: admin
+    mirada: Calidad, gobierno, linaje y ciclo de vida de los datos.
+  - codigo: SEG
+    nombre: Seguridad
+    estado: propuesto
+    aprobador: admin
+    mirada: Confidencialidad, integridad, identidad y cumplimiento.
+    secciones_opcionales: [mapeo_iso27001]
+  - codigo: IA
+    nombre: Inteligencia artificial
+    estado: propuesto
+    aprobador: admin
+    mirada: Uso responsable, evaluación y operación de modelos de IA.
+  - codigo: AE
+    nombre: Arquitectura empresarial
+    estado: propuesto
+    aprobador: admin
+    mirada: Alineamiento con la estrategia, capacidades de negocio y principios.
+  - codigo: OT
+    nombre: Tecnología operacional
+    estado: por_decidir
+    aprobador: admin
+    mirada: Entorno OT/IT, sistemas industriales y su convergencia con TI.  # POR DEFINIR (opcional): decidir si es dominio propio
