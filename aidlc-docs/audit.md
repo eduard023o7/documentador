@@ -110,3 +110,8 @@ Si, apruebo las historias"
 **Interpretación de la IA:** N1=B: Claude Sonnet 5.5 para taxonomista, redactor, validador e impacto; Claude Haiku 5.5 para el resto.
 **Acción de la IA:** `construction/u0-fundacion/nfr-requirements/` con nfr-requirements (NFR-C, M, P, R, S, Q, O, X) y tech-stack-decisions.
 **Estado:** esperando aprobación de los requisitos no funcionales.
+
+## 2026-10-19 · Aprobación de los requisitos no funcionales
+**Entrada del usuario:** "Si, procede"
+**Acción de la IA:** requisitos no funcionales aprobados. Diseño NFR de U0 sin preguntas: `construction/u0-fundacion/nfr-design/` con 10 patrones (presupuesto, enrutador de modelos, salidas validadas, reintentos, aprobación idempotente, fuentes como datos, configuración y secretos, registros, permisos mínimos, pruebas sin costo) y sus componentes lógicos.
+**Estado:** esperando aprobación del diseño NFR.

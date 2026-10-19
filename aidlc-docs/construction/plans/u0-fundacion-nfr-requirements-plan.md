@@ -50,4 +50,4 @@ Cualquiera sea la opción, el modelo por agente queda en Parameter Store y se ca
 - [x] Recibir respuesta a N1
 - [x] Escribir `nfr-requirements.md`
 - [x] Escribir `tech-stack-decisions.md`
-- [ ] Presentar para aprobación
+- [x] Presentar para aprobación (aprobado el 2026-10-19)

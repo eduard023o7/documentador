@@ -3,7 +3,7 @@
 **Proyecto:** documentador — MVP plataforma de lineamientos y estándares
 **Tipo:** greenfield
 **Inicio:** 2026-10-19
-**Etapa actual:** CONSTRUCTION · U0 Fundación · Requisitos no funcionales listos — esperando aprobación
+**Etapa actual:** CONSTRUCTION · U0 Fundación · Diseño NFR listo — esperando aprobación
 
 ## Detección del workspace
 - Repositorio vacío (sin commits ni código previo) → greenfield; se omite ingeniería inversa.
@@ -25,8 +25,8 @@ Etapas por unidad según `inception/plans/execution-plan.md`.
 
 **U0 Fundación**
 - [x] Diseño funcional — aprobado el 2026-10-19 (plantilla genérica hasta tener la corporativa)
-- [x] Requisitos no funcionales (para todo el MVP) — listos, N1=B Sonnet 5.5 + Haiku 5.5 (pendiente de aprobación)
-- [ ] Diseño NFR
+- [x] Requisitos no funcionales (para todo el MVP) — aprobados el 2026-10-19 (Sonnet 5.5 + Haiku 5.5)
+- [x] Diseño NFR — 10 patrones (pendiente de aprobación)
 - [ ] Diseño de infraestructura
 - [ ] Generación de código
 - [ ] Build y pruebas
