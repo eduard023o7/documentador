@@ -73,4 +73,4 @@ Cada flecha es una puerta: se presenta el resultado y se espera tu aprobación.
 - [x] Evaluar alcance, riesgo y supuestos
 - [x] Decidir etapas de Inception restantes
 - [x] Proponer unidades y etapas de Construction por unidad
-- [ ] Aprobación del plan
+- [x] Aprobación del plan (2026-10-19)
