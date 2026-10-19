@@ -24,3 +24,13 @@ cuenta AWS, plantilla"
 **Interpretación de la IA:** Q1=B (monorepo), Q3=A (todo el MVP), Q4=respuesta libre (redacción bajo demanda tras planificación; sin redundancia; grafo de relaciones), Q5=revisor, Q6=C (dominios como insumo; OT por definir), Q7=umbral 90 % aceptado, Q8=Eduardo dueño de todo, Q9=pide recomendación, Q10=A y B. Sin respuesta: Q2, Q11–Q14. El "4" de la segunda línea se interpreta como referencia a Q4 (la línea siguiente).
 **Acción de la IA:** requisitos actualizados a v1 (RF-38 a RF-40, RNF-12; cambios en RF-03, RF-14, RF-27, RF-35, RF-37). Siete preguntas de seguimiento en `requirement-followup-questions.md`.
 **Estado:** esperando respuestas de seguimiento.
+
+## 2026-10-19 · Respuestas a las preguntas de seguimiento (ronda 1)
+**Entrada del usuario:** "Github
+Permitelo con advertencia. Recuerda que no se debe de romper la armonia entre documentos
+De momento todos accederemos con un usuario admin ya que somos del mismo equipo, asi que cada uso revisará usando el mismo usuario
+No entiendo sobre los casos de prueba, la idea es definir los dominios, lineamientos, estandares con ayuda de la IA, luego quela IA redacte, nosotros revisar, versionar y luego aprobar.
+Dame las preguntas faltantes Q11 a Q14"
+**Interpretación de la IA:** S1=A (GitHub), S3=A con restricción de armonía, S4=usuario admin compartido, S2=A (inferida de la descripción del flujo), S5=no entendida → se explica en S8. Sin respuesta: S6, Q11–Q14.
+**Acción de la IA:** requisitos v2 (RF-41 armonía; cambios en RF-14, RF-34, RF-35, actores). Ronda 2 de preguntas: S8, S9, S6, Q11–Q14.
+**Estado:** esperando respuestas de la ronda 2.

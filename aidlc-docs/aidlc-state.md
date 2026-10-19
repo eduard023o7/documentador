@@ -14,8 +14,8 @@
 ### INCEPTION
 - [x] Detección del workspace
 - [-] Ingeniería inversa (no aplica: greenfield)
-- [ ] Análisis de requisitos — v1 con respuestas iniciales; 7 preguntas de seguimiento pendientes
-- [ ] Historias de usuario (condicional; ver S7)
+- [ ] Análisis de requisitos — v2; ronda 2 de preguntas pendiente (S6, S8, S9, Q11–Q14)
+- [ ] Historias de usuario (condicional; ver Q12)
 - [ ] Planificación del flujo de trabajo
 - [ ] Diseño de aplicación (condicional)
 - [ ] Generación de unidades de trabajo (condicional)
@@ -27,4 +27,4 @@ Se define en la planificación del flujo de trabajo.
 Fuera del alcance inicial.
 
 ## Extensiones
-- Reglas de seguridad como bloqueantes: pendiente (S7)
+- Reglas de seguridad como bloqueantes: pendiente (Q13)

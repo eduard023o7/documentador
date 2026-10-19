@@ -1,6 +1,6 @@
 # Requisitos — MVP plataforma de lineamientos y estándares
 
-**Estado:** borrador v1 (2026-10-19). Incorpora las respuestas de `requirement-verification-questions.md`; los puntos marcados **[SEGUIMIENTO Sn]** dependen de `requirement-followup-questions.md`.
+**Estado:** borrador v2 (2026-10-19). Incorpora las respuestas de `requirement-verification-questions.md`; los puntos marcados **[SEGUIMIENTO Sn]** dependen de `requirement-followup-questions.md`.
 
 ## 0. Decisiones tomadas
 
@@ -13,6 +13,10 @@
 | Q6 | Los dominios son **insumo de la planificación**; OT puede ser dominio, aún por definir. No se fijan dominios en el código |
 | Q7 | Umbral de calidad: **90 %** de coincidencia con los casos de prueba |
 | Q8 | **Eduardo es dueño de todo el MVP**, incluidos los fundacionales |
+| S1 | Contenido en **GitHub** (este repositorio) durante el MVP |
+| S2 | Flujo: definir dominios, lineamientos y estándares **con ayuda de la IA** → la IA redacta → revisión → versionado → aprobación |
+| S3 | Se permite redactar con padre o dependencias sin aprobar, **con advertencia**, sin romper la armonía entre documentos |
+| S4 | MVP con **un único usuario admin compartido** por el equipo; quien use la cuenta revisa y aprueba |
 | Q10 | Disponibles: **cuenta AWS** y **plantilla Word corporativa**. Pendientes: sitios aprobados, contrato de Gartner |
 
 ## 1. Análisis de la solicitud
@@ -36,9 +40,8 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 
 | Actor | Descripción |
 |---|---|
-| Administrador del marco | Único que edita el perfil del marco. También construye y opera la solución. En el MVP: Eduardo, dueño de todo |
-| Revisor | Da la aprobación final de un documento, del mapa o de un paquete de cambios **[SEGUIMIENTO S4]** |
-| Arquitecto | Propone necesidades, pide redacciones y revisa **[SEGUIMIENTO S5: si en el MVP hay más usuarios que Eduardo]** |
+| Admin (cuenta compartida) | En el MVP, una sola cuenta que usa todo el equipo de arquitectura: carga insumos, edita el perfil del marco, pide redacciones, revisa, versiona y aprueba. Eduardo es el dueño del MVP |
+| Revisor | Quien usa la cuenta admin al aprobar o rechazar; da la aprobación final. Registro de su nombre: **[SEGUIMIENTO S9]** |
 | Agentes de IA | Investigador, Taxonomista, Redactor, Validador, Contraste, Admisión, Analista de impacto, Publicador |
 
 ## 4. Requisitos funcionales
@@ -61,7 +64,7 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 ### Construcción de documentos
 - **RF-12** Plantilla inicial: ficha, propósito, alcance y aplicabilidad, documentos relacionados, definiciones, reglas, especificación técnica (solo estándares), excepciones, cumplimiento y verificación, referencias, control de cambios.
 - **RF-13** Cada regla tiene: ID, nivel (DEBE/DEBERÍA/PUEDE), enunciado, justificación, cómo se verifica y fuentes. Lo que viene de otro documento se referencia por ID, nunca se copia.
-- **RF-14** **Redacción bajo demanda:** el usuario elige un documento del mapa aprobado y pide su redacción; no hay redacción masiva del mapa. El orden recomendado sigue el grafo (fundacionales → lineamientos → estándares). Comportamiento si el padre o las dependencias no están aprobados: **[SEGUIMIENTO S3]**.
+- **RF-14** **Redacción bajo demanda:** el usuario elige un documento del mapa aprobado y pide su redacción; no hay redacción masiva del mapa. El orden recomendado sigue el grafo (fundacionales → lineamientos → estándares). Si el padre o las dependencias no están aprobados, se permite **con advertencia**: el documento queda marcado "con dependencias abiertas" y se revalida automáticamente cuando estas cambien de estado (RF-41).
 - **RF-15** Ciclo de vida: propuesto → en redacción → en validación → en revisión humana → aprobado → obsoleto. Revisión anual de cada aprobado.
 - **RF-16** Versionado `mayor.menor.parche` (mayor: cambia/elimina una regla DEBE; menor: agrega reglas o cambia DEBERÍA/PUEDE; parche: redacción). Cada versión registra autor, fecha, motivo y paquete de cambios. El mapa completo también se versiona.
 - **RF-17** El Markdown en Git es la fuente de verdad. Word se genera desde Markdown con la plantilla corporativa; PDF desde Word. Los no aprobados llevan marca de agua "Borrador".
@@ -78,7 +81,7 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 - **RF-24** Insumos: principios (formulario de texto), contexto de arquitectura empresarial (formulario estructurado + diagrama adjunto), fuentes de conocimiento (sitios aprobados y PDFs) y documentos existentes (PDF/Word, solo para contraste).
 - **RF-25** El mapa se genera y valida sin ver los documentos existentes; luego el contraste muestra coincidencias, omisiones y temas nuevos. Ninguna diferencia se incorpora sola.
 - **RF-26** Toda fuente citada debe existir y estar disponible; el validador lo comprueba.
-- **RF-27** Búsqueda semántica sobre los PDFs con cita a la página de origen; búsqueda en los sitios aprobados. Mecanismo: **[SEGUIMIENTO S6]** (recomendado: rastreador de Bedrock Knowledge Bases limitado a los sitios aprobados).
+- **RF-27** Búsqueda semántica sobre los PDFs con cita a la página de origen; búsqueda en los sitios aprobados. Mecanismo: **[SEGUIMIENTO S6, ronda 2]** (recomendado: rastreador de Bedrock Knowledge Bases limitado a los sitios aprobados).
 
 ### Visualización y seguimiento
 - **RF-28** Vista **Grafo**: nodos (forma por tipo, color por estado), aristas por tipo de relación, filtros por dominio/tipo/estado, resaltado de dependientes al elegir un nodo.
@@ -89,16 +92,17 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 - **RF-33** Vista **Calidad de los agentes**: borradores aprobados sin cambios, observaciones frecuentes por tipo, coincidencia con casos de prueba y costo por ejecución.
 
 ### Acceso y repositorio
-- **RF-34** Inicio de sesión con usuario y contraseña; dos roles: administrador del marco y arquitecto. Debe poder federarse con Entra ID más adelante sin cambiar la aplicación.
-- **RF-35** La web oculta Git: cada aprobación se convierte en un commit con autor, fecha y motivo; cada paquete de cambios es una rama que se fusiona al aprobarse; las versiones son etiquetas (`<ID>@x.y.z`, `mapa@x.y.z`). Proveedor: **[SEGUIMIENTO S1]** (recomendado: GitHub en el MVP).
+- **RF-34** Inicio de sesión con usuario y contraseña. En el MVP existe **un único usuario admin** compartido por el equipo, con todos los permisos. El diseño mantiene el concepto de rol para agregar usuarios y roles (arquitecto, administrador del marco) y federar con Entra ID más adelante sin cambiar la aplicación.
+- **RF-35** La web oculta Git: cada aprobación se convierte en un commit con autor, fecha y motivo; cada paquete de cambios es una rama que se fusiona al aprobarse; las versiones son etiquetas (`<ID>@x.y.z`, `mapa@x.y.z`). Proveedor: **GitHub** (este repositorio) en el MVP.
 - **RF-36** El acceso al repositorio de contenido pasa por un adaptador; cambiar de cuenta (personal → corporativa) o de proveedor es solo configuración.
 
 ### Calidad de los agentes
-- **RF-37** Un conjunto de 30–50 temas reales clasificados a mano (tipo, dominio, padre) se usa como evaluación automática en cada cambio de prompts o reglas; la fase 1 se aprueba con **≥ 90 %** de coincidencia. Quién arma los casos: **[SEGUIMIENTO S5]**.
+- **RF-37** Un conjunto de 30–50 temas reales clasificados a mano (tipo, dominio, padre) se usa como evaluación automática en cada cambio de prompts o reglas; la fase 1 se aprueba con **≥ 90 %** de coincidencia. Cómo se arman los casos (o si se mantienen): **[SEGUIMIENTO S8]**.
 
 ### Sin redundancia y con referencias (refuerzo de Q4)
 - **RF-38** **Detección de redundancia:** antes de proponer un documento o una regla, el taxonomista y el redactor consultan el mapa y las reglas existentes; el validador marca como observación toda regla que repita el significado de otra ya existente (comparación semántica) y propone reemplazarla por una referencia a su ID.
 - **RF-39** **Referencias navegables:** toda referencia a otro documento o regla (`<ID>` o `<ID>.RNN`) se valida contra el mapa (debe existir y no estar obsoleta) y se muestra como enlace en la web, en Word y en PDF.
+- **RF-41** **Armonía entre documentos:** ningún documento ni paquete de cambios se aprueba si rompe una regla de coherencia (RF-06) frente a los documentos aprobados: contradicción con el padre o una dependencia, relajación de una regla del dominio dueño, tema duplicado, referencia rota o ciclo. Cuando un documento cambia de versión o de estado, sus dependientes se marcan para revalidación y el validador informa los conflictos antes de la siguiente aprobación.
 - **RF-40** **Mapa como grafo:** el mapa (documentos + relaciones tipadas) se construye leyendo las fichas y es la fuente única que usan los agentes para decidir dónde vive cada tema, y que muestran las vistas de grafo y por niveles.
 
 ## 5. Requisitos no funcionales
@@ -126,7 +130,7 @@ Guías, procedimientos y catálogos · publicación web para toda la empresa · 
 
 ## 8. Inconsistencias detectadas en el insumo
 
-1. El plan de fases menciona **Azure Repos** en la fase 4, mientras el resto del documento usa **GitHub**. → S1 (pendiente)
+1. El plan de fases menciona **Azure Repos** en la fase 4; se resolvió: **GitHub** en el MVP (S1).
 2. El insumo define dos repositorios; se resolvió con un **monorepo** (Q1).
-3. El insumo fija un orden de redacción por el grafo; la decisión de redactar **bajo demanda** cambia ese orden a recomendación. → S3 (pendiente)
-4. El insumo habla de cinco arquitectos aprobando por dominio; la respuesta indica un dueño único y un revisor. → S4, S5 (pendiente)
+3. El insumo fija un orden de redacción por el grafo; la decisión de redactar **bajo demanda** cambia ese orden a recomendación; se resolvió con advertencia + revalidación (S3, RF-41).
+4. El insumo habla de cinco arquitectos aprobando por dominio; se resolvió con un usuario admin compartido en el MVP (S4); trazabilidad del revisor pendiente (S9).
