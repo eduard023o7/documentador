@@ -98,3 +98,9 @@ Si, apruebo las historias"
 **Interpretación de la IA:** F1=A, F2=B, F3=A. F4 no tenía opción recomendada → se pregunta de nuevo; el diseño funcional no depende de ella.
 **Acción de la IA:** diseño funcional de U0 en `construction/u0-fundacion/functional-design/` (domain-entities, business-rules con BR-U0-01 a 32, business-logic-model con cobertura de HU-0.1 a 0.7).
 **Estado:** esperando aprobación del diseño funcional y confirmación de F4.
+
+## 2026-10-19 · F4 y aprobación del diseño funcional de U0
+**Entrada del usuario:** "B, procede"
+**Interpretación de la IA:** F4=B (plantilla genérica por ahora; la puerta de U0 exige probar con la corporativa) y aprobación del diseño funcional.
+**Acción de la IA:** consulta de la referencia de modelos Claude (IDs, precios de referencia, disponibilidad en Bedrock). Plan de requisitos no funcionales en `construction/plans/u0-fundacion-nfr-requirements-plan.md` con decisiones y una pregunta (N1: modelos por agente).
+**Estado:** esperando respuesta a N1.

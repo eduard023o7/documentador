@@ -43,13 +43,13 @@ A) La subo al repositorio en `contenido/marco/plantilla-word/corporativa.docx` (
 B) Aún no la tengo a mano: construyo y pruebo la conversión con una plantilla genérica y cambiamos a la corporativa cuando la tengas (la puerta de U0 queda pendiente de ese cambio)
 X) Otro (explica)
 
-[Answer]: Pendiente: F4 no tenía opción recomendada. Se diseña para ambas; se confirma antes de generar código
+[Answer]: B — "B, procede" (plantilla genérica por ahora; U0 no se cierra hasta probar con la corporativa)
 
 ## Pasos
 
-- [x] Recibir respuestas F1–F4 (F4 pendiente de confirmar)
+- [x] Recibir respuestas F1–F4
 - [x] Escribir `domain-entities.md`
 - [x] Escribir `business-rules.md`
 - [x] Escribir `business-logic-model.md`
 - [x] Verificar cobertura de HU-0.1 a HU-0.7
-- [ ] Presentar para aprobación
+- [x] Presentar para aprobación (aprobado el 2026-10-19)

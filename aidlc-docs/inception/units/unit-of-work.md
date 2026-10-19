@@ -11,7 +11,7 @@ Cada unidad se construye con las etapas de Construction definidas en `plans/exec
 | Entregables | `contenido/marco/` completo (borrador de la IA aprobado por ti), plantillas por tipo, `pyproject.toml` y paquete `documentador`, stack CDK base (presupuesto USD 10 con alertas, bucket S3, Parameter Store, tabla DynamoDB), Word y PDF de ejemplo con la plantilla corporativa |
 | Fuera | Agentes, base de conocimiento, web |
 | Insumos que necesito de ti | Plantilla Word corporativa (`.docx`), acceso a la cuenta AWS para desplegar (desde tu equipo), un token de GitHub para el adaptador |
-| Puerta de salida | Perfil y plantillas aprobados (`marco@1.0.0`); `doc perfil validar` pasa; despliegue base con alertas activo; Word/PDF de ejemplo aceptado por ti |
+| Puerta de salida | Perfil y plantillas aprobados (`marco@1.0.0`); `doc perfil validar` pasa; despliegue base con alertas activo; Word/PDF de ejemplo aceptado por ti **con la plantilla corporativa** (se desarrolla con una genérica, F4=B) |
 | Costo esperado | ≈ USD 0 (sin llamadas a modelos salvo la redacción asistida del perfil, que hago yo en esta sesión) |
 
 ## U1 · Mapa
