@@ -3,7 +3,7 @@
 **Proyecto:** documentador — MVP plataforma de lineamientos y estándares
 **Tipo:** greenfield
 **Inicio:** 2026-10-19
-**Etapa actual:** INCEPTION · Unidades de trabajo listas — esperando aprobación (última puerta de Inception)
+**Etapa actual:** CONSTRUCTION · U0 Fundación · Diseño funcional — esperando respuestas a `construction/plans/u0-fundacion-functional-design-plan.md`
 
 ## Detección del workspace
 - Repositorio vacío (sin commits ni código previo) → greenfield; se omite ingeniería inversa.
@@ -18,10 +18,20 @@
 - [x] Historias de usuario — 47 historias en 6 épicas, aprobadas el 2026-10-19
 - [x] Planificación del flujo de trabajo — aprobada el 2026-10-19
 - [x] Diseño de aplicación — 15 componentes, aprobado el 2026-10-19
-- [x] Generación de unidades de trabajo — U0–U4 + piloto (pendiente de aprobación)
+- [x] Generación de unidades de trabajo — U0–U4 + piloto, aprobadas el 2026-10-19
 
 ### CONSTRUCTION
-Ver la tabla de etapas por unidad en `inception/plans/execution-plan.md`.
+Etapas por unidad según `inception/plans/execution-plan.md`.
+
+**U0 Fundación**
+- [ ] Diseño funcional — plan con preguntas F1–F4
+- [ ] Requisitos no funcionales (para todo el MVP)
+- [ ] Diseño NFR
+- [ ] Diseño de infraestructura
+- [ ] Generación de código
+- [ ] Build y pruebas
+
+**U1 Mapa · U2 Redacción · U3 Necesidades · U4 Web** — pendientes
 
 ### OPERATIONS
 Fuera del alcance inicial.

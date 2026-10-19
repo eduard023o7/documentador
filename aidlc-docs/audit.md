@@ -87,3 +87,8 @@ Si, apruebo las historias"
 **Entrada del usuario:** "Si"
 **Acción de la IA:** diseño de aplicación aprobado. Generación de unidades sin preguntas (ya acordadas en el plan de ejecución): `inception/units/` con unit-of-work, dependencias y asignación de historias (47 historias, cada una en una sola unidad).
 **Estado:** esperando aprobación de las unidades.
+
+## 2026-10-19 · Aprobación de las unidades — fin de INCEPTION
+**Entrada del usuario:** "Si"
+**Acción de la IA:** unidades aprobadas; termina INCEPTION. Inicio de CONSTRUCTION con U0 Fundación: plan de diseño funcional en `construction/plans/u0-fundacion-functional-design-plan.md` con cinco decisiones y cuatro preguntas (F1–F4).
+**Estado:** esperando respuestas a F1–F4.

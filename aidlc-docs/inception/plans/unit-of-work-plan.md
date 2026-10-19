@@ -10,4 +10,4 @@
 - [x] Dependencias y orden → `units/unit-of-work-dependency.md`
 - [x] Asignar cada historia a una unidad → `units/unit-of-work-story-map.md`
 - [x] Verificar que ninguna historia queda sin unidad ni en dos unidades
-- [ ] Presentar para aprobación
+- [x] Presentar para aprobación (aprobado el 2026-10-19)
