@@ -51,4 +51,4 @@ X) Otro (explica)
 - [x] Escribir `data-model.md`
 - [x] Escribir `repo-structure.md`
 - [x] Verificar que cada historia tiene un componente responsable
-- [ ] Presentar para aprobación (en curso)
+- [x] Presentar para aprobación (aprobado el 2026-10-19)

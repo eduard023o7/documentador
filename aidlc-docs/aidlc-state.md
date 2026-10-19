@@ -3,7 +3,7 @@
 **Proyecto:** documentador — MVP plataforma de lineamientos y estándares
 **Tipo:** greenfield
 **Inicio:** 2026-10-19
-**Etapa actual:** INCEPTION · Diseño de aplicación listo — esperando aprobación
+**Etapa actual:** INCEPTION · Unidades de trabajo listas — esperando aprobación (última puerta de Inception)
 
 ## Detección del workspace
 - Repositorio vacío (sin commits ni código previo) → greenfield; se omite ingeniería inversa.
@@ -17,8 +17,8 @@
 - [x] Análisis de requisitos — v3 aprobada el 2026-10-19
 - [x] Historias de usuario — 47 historias en 6 épicas, aprobadas el 2026-10-19
 - [x] Planificación del flujo de trabajo — aprobada el 2026-10-19
-- [x] Diseño de aplicación — 15 componentes (pendiente de aprobación)
-- [ ] Generación de unidades de trabajo (se ejecuta: U0–U4)
+- [x] Diseño de aplicación — 15 componentes, aprobado el 2026-10-19
+- [x] Generación de unidades de trabajo — U0–U4 + piloto (pendiente de aprobación)
 
 ### CONSTRUCTION
 Ver la tabla de etapas por unidad en `inception/plans/execution-plan.md`.

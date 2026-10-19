@@ -82,3 +82,8 @@ Si, apruebo las historias"
 **Interpretación de la IA:** D1=A (flujos en el equipo del Admin hasta U4), D2=A (revisión con pull requests de GitHub antes de la web), D3=A (estado en DynamoDB desde U1).
 **Acción de la IA:** diseño de aplicación en `inception/application-design/` (components, component-methods, services, component-dependency, data-model, repo-structure). Verificado por script: toda historia tiene un componente responsable. El "Publicador" del doc original queda como componente determinista (sin IA).
 **Estado:** esperando aprobación del diseño de aplicación.
+
+## 2026-10-19 · Aprobación del diseño de aplicación
+**Entrada del usuario:** "Si"
+**Acción de la IA:** diseño de aplicación aprobado. Generación de unidades sin preguntas (ya acordadas en el plan de ejecución): `inception/units/` con unit-of-work, dependencias y asignación de historias (47 historias, cada una en una sola unidad).
+**Estado:** esperando aprobación de las unidades.
