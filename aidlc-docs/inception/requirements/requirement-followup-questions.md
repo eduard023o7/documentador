@@ -84,14 +84,14 @@ B) No usar casos de prueba en el MVP; la calidad la asegura solo la revisión hu
 C) Armar la lista a mano antes de la fase 1, como decía el doc
 X) Otro (explica)
 
-[Answer]:
+[Answer]: A — "recomendado"
 
 ### S9. Con un único usuario admin compartido, el historial dirá siempre "admin". ¿Registramos quién revisó?
 A) Sí: al aprobar o rechazar se escribe el nombre de quien revisa (campo obligatorio) y queda en el commit y en el historial (Recomendado: conserva la auditoría sin crear usuarios)
 B) No, basta con "admin"
 X) Otro (explica)
 
-[Answer]:
+[Answer]: A — "recomendado"
 
 ### S6 (repetida). Búsqueda en sitios web aprobados
 A) Base de conocimiento de AWS que descarga e indexa solo los sitios aprobados; Tavily después, si faltan fuentes (Recomendado)
@@ -99,32 +99,32 @@ B) Tavily (buscador externo con filtro de dominios)
 C) Ambos desde el inicio
 X) Otro (explica)
 
-[Answer]:
+[Answer]: A — "recomendado, pero en base de conocimiento quiero usar S3 vector y demas servicios que hagan mi solucion lo mas barato posible"
 
 ### Q11. Presupuestos de costo
 A) Propongo valores iniciales configurables: tope de tokens por ejecución y alerta mensual de AWS (p. ej. USD 100) (Recomendado)
 B) Tengo los valores (indica tope por ejecución y monto mensual)
 X) Otro (explica)
 
-[Answer]:
+[Answer]: X — "presupuesto para las pruebas iniciales 10 dolares"
 
 ### Q12. ¿Escribimos historias de usuario antes del diseño? (frases del tipo "como admin quiero pedir la redacción de un documento para…", con criterios de aceptación que después se prueban)
 A) Sí (Recomendado: hay tres flujos y seis vistas; las historias fijan qué se considera terminado)
 B) No: pasar directo de requisitos a diseño
 X) Otro (explica)
 
-[Answer]:
+[Answer]: A — "Si"
 
 ### Q13. ¿Aplicamos reglas de seguridad como obligatorias en el diseño y el código? (mínimo privilegio en AWS, cifrado, validación de entradas, registro de auditoría, protección ante instrucciones ocultas en fuentes)
 A) Sí, obligatorias: un diseño o código que no las cumpla no pasa la puerta (Recomendado: maneja contenido corporativo y lee fuentes externas)
 B) Solo como recomendaciones
 X) Otro (explica)
 
-[Answer]:
+[Answer]: A con condición — "Si, pero no quiero añadir complejidad, es un MVP"
 
 ### Q14. Idioma del código
 A) Nombres de variables, funciones y comentarios en inglés; documentación, interfaz, prompts y commits en español (Recomendado)
 B) Todo en español, incluido el código
 X) Otro (explica)
 
-[Answer]:
+[Answer]: A — "recomendado"

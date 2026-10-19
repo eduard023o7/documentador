@@ -34,3 +34,15 @@ Dame las preguntas faltantes Q11 a Q14"
 **Interpretación de la IA:** S1=A (GitHub), S3=A con restricción de armonía, S4=usuario admin compartido, S2=A (inferida de la descripción del flujo), S5=no entendida → se explica en S8. Sin respuesta: S6, Q11–Q14.
 **Acción de la IA:** requisitos v2 (RF-41 armonía; cambios en RF-14, RF-34, RF-35, actores). Ronda 2 de preguntas: S8, S9, S6, Q11–Q14.
 **Estado:** esperando respuestas de la ronda 2.
+
+## 2026-10-19 · Respuestas a las preguntas de seguimiento (ronda 2)
+**Entrada del usuario:** "S8: recomendado
+S9: recomendado
+s6: recomendado, pero en base de conocimiento quiero usar S3 vector y demas servicios que hagan mi solucion lo mas barato posible
+S11: presupuesto para las pruebas iniciales 10 dolares
+S12: Si
+S13: Si, pero no quiero añadir complejidad, es un MVP
+S14 recomendado"
+**Interpretación de la IA:** S8=A, S9=A, S6=A con S3 Vectors y criterio de mínimo costo; "S11–S14" se interpretan como Q11–Q14: Q11=USD 10 para pruebas iniciales, Q12=sí, Q13=obligatoria pero mínima, Q14=A.
+**Acción de la IA:** requisitos v3 completos (RF-37 reescrito, RF-42 registro del revisor, RNF-13 mínimo costo, RNF-14 seguridad mínima; RF-27, RNF-04, RNF-06, RNF-08 ajustados). Sin preguntas abiertas.
+**Estado:** análisis de requisitos completo; esperando aprobación para pasar a historias de usuario.

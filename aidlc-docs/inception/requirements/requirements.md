@@ -1,6 +1,6 @@
 # Requisitos — MVP plataforma de lineamientos y estándares
 
-**Estado:** borrador v2 (2026-10-19). Incorpora las respuestas de `requirement-verification-questions.md`; los puntos marcados **[SEGUIMIENTO Sn]** dependen de `requirement-followup-questions.md`.
+**Estado:** v3 (2026-10-19), completa. Incorpora todas las respuestas de `requirement-verification-questions.md` y `requirement-followup-questions.md`. Pendiente de aprobación.
 
 ## 0. Decisiones tomadas
 
@@ -17,6 +17,13 @@
 | S2 | Flujo: definir dominios, lineamientos y estándares **con ayuda de la IA** → la IA redacta → revisión → versionado → aprobación |
 | S3 | Se permite redactar con padre o dependencias sin aprobar, **con advertencia**, sin romper la armonía entre documentos |
 | S4 | MVP con **un único usuario admin compartido** por el equipo; quien use la cuenta revisa y aprueba |
+| S6 | Fuentes web: la **base de conocimiento de AWS indexa solo los sitios aprobados**, con **S3 Vectors**; Tavily solo si después faltan fuentes. Elegir siempre los servicios más baratos |
+| S8 | Casos de prueba **sin trabajo extra**: cada corrección al revisar el mapa se guarda sola como caso |
+| S9 | Al aprobar o rechazar se registra **el nombre de quien revisa** |
+| Q11 | Presupuesto de **USD 10** para las pruebas iniciales |
+| Q12 | **Sí** a historias de usuario |
+| Q13 | Seguridad **obligatoria pero mínima**: sin agregar complejidad al MVP |
+| Q14 | Código en inglés; documentación, interfaz, prompts y commits en español |
 | Q10 | Disponibles: **cuenta AWS** y **plantilla Word corporativa**. Pendientes: sitios aprobados, contrato de Gartner |
 
 ## 1. Análisis de la solicitud
@@ -41,7 +48,7 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 | Actor | Descripción |
 |---|---|
 | Admin (cuenta compartida) | En el MVP, una sola cuenta que usa todo el equipo de arquitectura: carga insumos, edita el perfil del marco, pide redacciones, revisa, versiona y aprueba. Eduardo es el dueño del MVP |
-| Revisor | Quien usa la cuenta admin al aprobar o rechazar; da la aprobación final. Registro de su nombre: **[SEGUIMIENTO S9]** |
+| Revisor | Quien usa la cuenta admin al aprobar o rechazar; da la aprobación final. Al aprobar o rechazar escribe su nombre (obligatorio); queda en el commit y en el historial |
 | Agentes de IA | Investigador, Taxonomista, Redactor, Validador, Contraste, Admisión, Analista de impacto, Publicador |
 
 ## 4. Requisitos funcionales
@@ -81,7 +88,7 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 - **RF-24** Insumos: principios (formulario de texto), contexto de arquitectura empresarial (formulario estructurado + diagrama adjunto), fuentes de conocimiento (sitios aprobados y PDFs) y documentos existentes (PDF/Word, solo para contraste).
 - **RF-25** El mapa se genera y valida sin ver los documentos existentes; luego el contraste muestra coincidencias, omisiones y temas nuevos. Ninguna diferencia se incorpora sola.
 - **RF-26** Toda fuente citada debe existir y estar disponible; el validador lo comprueba.
-- **RF-27** Búsqueda semántica sobre los PDFs con cita a la página de origen; búsqueda en los sitios aprobados. Mecanismo: **[SEGUIMIENTO S6, ronda 2]** (recomendado: rastreador de Bedrock Knowledge Bases limitado a los sitios aprobados).
+- **RF-27** Búsqueda semántica sobre los PDFs con cita a la página de origen; búsqueda en los sitios aprobados. Mecanismo: Bedrock Knowledge Bases con **S3 Vectors** como almacén; los sitios aprobados se indexan con el rastreador web de la base de conocimiento (o, si no es compatible con S3 Vectors, se descargan a S3 y se indexan como documentos; se verifica en diseño de infraestructura). Sin buscador externo en el MVP.
 
 ### Visualización y seguimiento
 - **RF-28** Vista **Grafo**: nodos (forma por tipo, color por estado), aristas por tipo de relación, filtros por dominio/tipo/estado, resaltado de dependientes al elegir un nodo.
@@ -92,12 +99,13 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 - **RF-33** Vista **Calidad de los agentes**: borradores aprobados sin cambios, observaciones frecuentes por tipo, coincidencia con casos de prueba y costo por ejecución.
 
 ### Acceso y repositorio
+- **RF-42** **Registro del revisor:** toda aprobación o rechazo exige el nombre de quien revisa; se guarda en el commit, en el historial del documento y en el estado de trabajo.
 - **RF-34** Inicio de sesión con usuario y contraseña. En el MVP existe **un único usuario admin** compartido por el equipo, con todos los permisos. El diseño mantiene el concepto de rol para agregar usuarios y roles (arquitecto, administrador del marco) y federar con Entra ID más adelante sin cambiar la aplicación.
 - **RF-35** La web oculta Git: cada aprobación se convierte en un commit con autor, fecha y motivo; cada paquete de cambios es una rama que se fusiona al aprobarse; las versiones son etiquetas (`<ID>@x.y.z`, `mapa@x.y.z`). Proveedor: **GitHub** (este repositorio) en el MVP.
 - **RF-36** El acceso al repositorio de contenido pasa por un adaptador; cambiar de cuenta (personal → corporativa) o de proveedor es solo configuración.
 
 ### Calidad de los agentes
-- **RF-37** Un conjunto de 30–50 temas reales clasificados a mano (tipo, dominio, padre) se usa como evaluación automática en cada cambio de prompts o reglas; la fase 1 se aprueba con **≥ 90 %** de coincidencia. Cómo se arman los casos (o si se mantienen): **[SEGUIMIENTO S8]**.
+- **RF-37** **Casos de prueba automáticos:** cada corrección que el revisor hace al mapa propuesto (cambiar tipo, dominio o padre) se guarda como caso de prueba con la respuesta correcta. En cada cambio de prompts o reglas, la IA vuelve a clasificar esos casos y se mide la coincidencia; el umbral es **≥ 90 %** y se aplica desde que existan al menos 30 casos. La vista de calidad (RF-33) muestra el resultado.
 
 ### Sin redundancia y con referencias (refuerzo de Q4)
 - **RF-38** **Detección de redundancia:** antes de proponer un documento o una regla, el taxonomista y el redactor consultan el mapa y las reglas existentes; el validador marca como observación toda regla que repita el significado de otra ya existente (comparación semántica) y propone reemplazarla por una referencia a su ID.
@@ -110,19 +118,21 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 - **RNF-01 Región y nube:** AWS us-east-1.
 - **RNF-02 Operabilidad:** servicios gestionados y serverless; desplegable con un comando (AWS CDK en Python); flujos deterministas y fáciles de depurar.
 - **RNF-03 Trazabilidad:** registro de cada paso de cada ejecución (AgentCore Observability / CloudWatch).
-- **RNF-04 Costo:** presupuesto de tokens por ejecución (se detiene y avisa al superarlo) y presupuesto mensual con alerta (AWS Budgets). **[PREGUNTA Q11]**
+- **RNF-04 Costo:** presupuesto de tokens por ejecución (se detiene y avisa al superarlo) y presupuesto mensual con alerta (AWS Budgets). Presupuesto de las pruebas iniciales: **USD 10** en total, con alertas al 50 %, 80 % y 100 %.
 - **RNF-05 Seguridad ante inyección de prompts:** el contenido de páginas web y PDFs se trata como datos, nunca como órdenes; ningún agente que lee fuentes puede escribir en el mapa.
-- **RNF-06 Secretos:** token del repositorio y claves de API en Secrets Manager.
+- **RNF-06 Secretos:** token del repositorio en un almacén cifrado de AWS (SSM Parameter Store SecureString, sin costo, en vez de Secrets Manager).
 - **RNF-07 Licencias:** no cargar contenido de Gartner hasta revisar el contrato.
-- **RNF-08 Idioma:** español en contenido, interfaz y mensajes.
+- **RNF-08 Idioma:** español en contenido, interfaz, prompts, mensajes y commits; código (identificadores y comentarios) en inglés.
 - **RNF-09 Usabilidad:** pocas pantallas, lenguaje claro, toda decisión de la IA con justificación visible.
 - **RNF-10 Portabilidad:** monorepo con el contenido del marco en una carpeta propia que no importa nada del código, de modo que pueda extraerse a otro repositorio sin cambios; repositorio y proveedor de identidad intercambiables por configuración.
+- **RNF-13 Mínimo costo:** ante dos opciones equivalentes se elige la más barata. Pautas: solo servicios de pago por uso sin costo fijo (sin OpenSearch Serverless, sin NAT Gateway, sin VPC salvo que sea imprescindible, sin llaves KMS propias); S3 Vectors como almacén vectorial; DynamoDB bajo demanda; logs con retención corta; modelo rápido y barato para tareas simples y para pruebas, y el más capaz solo para redactor y validador; ejecuciones con tope de tokens.
+- **RNF-14 Seguridad mínima obligatoria (sin complejidad extra):** (1) permisos IAM mínimos por función, generados por CDK; (2) cifrado en reposo y en tránsito con las opciones por defecto de AWS; (3) S3 sin acceso público; (4) API solo con sesión de Cognito; (5) validación de entradas en la API; (6) contenido de fuentes tratado como datos (RNF-05); (7) registro de cada ejecución y aprobación (RF-42). Fuera del MVP: WAF, VPC privada, llaves propias, MFA obligatoria.
 - **RNF-12 Commits de contenido:** las aprobaciones generan commits en el mismo repositorio que el código; el despliegue (Amplify, CDK) debe ignorar cambios solo de contenido para no reconstruir la aplicación en cada aprobación.
 - **RNF-11 Calidad medible:** pytest + evaluación automática con los casos de prueba.
 
 ## 6. Stack de referencia (del insumo)
 
-Python (backend y agentes) · Strands Agents sobre Amazon Bedrock AgentCore Runtime · Claude en Amazon Bedrock (un modelo más capaz para redactor y validador, uno más rápido para tareas simples; configurable) · API Gateway + Lambda · React + Vite + TypeScript en Amplify Hosting con Amplify UI · Cognito · Cytoscape.js + librería de diffs · Pandoc + LibreOffice en Lambda contenedor · Bedrock Knowledge Bases sobre S3 con S3 Vectors · DynamoDB y S3 · GitHub vía API detrás de un adaptador · AWS CDK en Python · pytest.
+Python (backend y agentes) · Strands Agents sobre Amazon Bedrock AgentCore Runtime · Claude en Amazon Bedrock (un modelo más capaz para redactor y validador, uno más rápido para tareas simples; configurable) · API Gateway + Lambda · React + Vite + TypeScript en Amplify Hosting con Amplify UI · Cognito · Cytoscape.js + librería de diffs · Pandoc + LibreOffice en Lambda contenedor · Bedrock Knowledge Bases sobre S3 con S3 Vectors · DynamoDB bajo demanda y S3 · SSM Parameter Store · GitHub vía API detrás de un adaptador · AWS CDK en Python · pytest.
 
 ## 7. Fuera del alcance del MVP
 
