@@ -104,3 +104,9 @@ Si, apruebo las historias"
 **Interpretación de la IA:** F4=B (plantilla genérica por ahora; la puerta de U0 exige probar con la corporativa) y aprobación del diseño funcional.
 **Acción de la IA:** consulta de la referencia de modelos Claude (IDs, precios de referencia, disponibilidad en Bedrock). Plan de requisitos no funcionales en `construction/plans/u0-fundacion-nfr-requirements-plan.md` con decisiones y una pregunta (N1: modelos por agente).
 **Estado:** esperando respuesta a N1.
+
+## 2026-10-19 · Respuesta N1 (modelos)
+**Entrada del usuario:** "B, procede"
+**Interpretación de la IA:** N1=B: Claude Sonnet 5.5 para taxonomista, redactor, validador e impacto; Claude Haiku 5.5 para el resto.
+**Acción de la IA:** `construction/u0-fundacion/nfr-requirements/` con nfr-requirements (NFR-C, M, P, R, S, Q, O, X) y tech-stack-decisions.
+**Estado:** esperando aprobación de los requisitos no funcionales.

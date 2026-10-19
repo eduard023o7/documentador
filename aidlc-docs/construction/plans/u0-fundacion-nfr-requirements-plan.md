@@ -43,11 +43,11 @@ X) Otro (explica)
 
 Cualquiera sea la opción, el modelo por agente queda en Parameter Store y se cambia sin tocar código.
 
-[Answer]:
+[Answer]: B — "B, procede"
 
 ## Pasos
 
-- [ ] Recibir respuesta a N1
-- [ ] Escribir `nfr-requirements.md`
-- [ ] Escribir `tech-stack-decisions.md`
+- [x] Recibir respuesta a N1
+- [x] Escribir `nfr-requirements.md`
+- [x] Escribir `tech-stack-decisions.md`
 - [ ] Presentar para aprobación
