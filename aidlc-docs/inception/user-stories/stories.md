@@ -90,7 +90,7 @@ Como Admin quiero subir PDFs y registrar los sitios web aprobados en una base de
 - **Dado** un PDF subido, **cuando** se indexa, **entonces** una búsqueda devuelve fragmentos con el nombre del archivo y la página de origen.
 - **Dado** la lista de sitios aprobados, **cuando** se sincroniza, **entonces** solo se indexan páginas de esos sitios.
 - **Dado** la base de conocimiento, **cuando** se revisa su configuración, **entonces** usa S3 Vectors como almacén.
-- **Dado** un archivo marcado como Gartner, **cuando** intento cargarlo sin la revisión del contrato registrada, **entonces** el sistema lo rechaza.
+- **Dado** cualquier fuente cargada, **cuando** se indexa, **entonces** queda registrado su origen (por ejemplo, Gartner, proveedor o marco público).
 
 ### HU-1.3 Evaluación de dominios por la IA · M
 Como Admin quiero que un agente evalúe los dominios que propusimos y sugiera ajustes con su justificación para decidir los dominios finales con más información.

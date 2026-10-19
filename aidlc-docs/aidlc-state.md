@@ -3,7 +3,7 @@
 **Proyecto:** documentador — MVP plataforma de lineamientos y estándares
 **Tipo:** greenfield
 **Inicio:** 2026-10-19
-**Etapa actual:** INCEPTION · Historias de usuario listas — esperando aprobación
+**Etapa actual:** INCEPTION · Planificación del flujo de trabajo — esperando aprobación de `inception/plans/execution-plan.md`
 
 ## Detección del workspace
 - Repositorio vacío (sin commits ni código previo) → greenfield; se omite ingeniería inversa.
@@ -15,13 +15,13 @@
 - [x] Detección del workspace
 - [-] Ingeniería inversa (no aplica: greenfield)
 - [x] Análisis de requisitos — v3 aprobada el 2026-10-19
-- [x] Historias de usuario — 47 historias en 6 épicas (pendiente de aprobación)
-- [ ] Planificación del flujo de trabajo
-- [ ] Diseño de aplicación (condicional)
-- [ ] Generación de unidades de trabajo (condicional)
+- [x] Historias de usuario — 47 historias en 6 épicas, aprobadas el 2026-10-19
+- [x] Planificación del flujo de trabajo — plan listo (pendiente de aprobación)
+- [ ] Diseño de aplicación (se ejecuta)
+- [ ] Generación de unidades de trabajo (se ejecuta: U0–U4)
 
 ### CONSTRUCTION
-Se define en la planificación del flujo de trabajo.
+Ver la tabla de etapas por unidad en `inception/plans/execution-plan.md`.
 
 ### OPERATIONS
 Fuera del alcance inicial.

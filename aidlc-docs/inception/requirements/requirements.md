@@ -24,7 +24,7 @@
 | Q12 | **Sí** a historias de usuario |
 | Q13 | Seguridad **obligatoria pero mínima**: sin agregar complejidad al MVP |
 | Q14 | Código en inglés; documentación, interfaz, prompts y commits en español |
-| Q10 | Disponibles: **cuenta AWS** y **plantilla Word corporativa**. Pendientes: sitios aprobados, contrato de Gartner |
+| Q10 | Disponibles: **cuenta AWS** y **plantilla Word corporativa**. Pendiente: sitios aprobados. Uso de documentos de Gartner autorizado |
 
 ## 1. Análisis de la solicitud
 
@@ -121,7 +121,7 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 - **RNF-04 Costo:** presupuesto de tokens por ejecución (se detiene y avisa al superarlo) y presupuesto mensual con alerta (AWS Budgets). Presupuesto de las pruebas iniciales: **USD 10** en total, con alertas al 50 %, 80 % y 100 %.
 - **RNF-05 Seguridad ante inyección de prompts:** el contenido de páginas web y PDFs se trata como datos, nunca como órdenes; ningún agente que lee fuentes puede escribir en el mapa.
 - **RNF-06 Secretos:** token del repositorio en un almacén cifrado de AWS (SSM Parameter Store SecureString, sin costo, en vez de Secrets Manager).
-- **RNF-07 Licencias:** no cargar contenido de Gartner hasta revisar el contrato.
+- **RNF-07 Licencias:** el equipo tiene autorización para usar los documentos de Gartner en la plataforma (confirmado el 2026-10-19). Cada fuente cargada registra su origen.
 - **RNF-08 Idioma:** español en contenido, interfaz, prompts, mensajes y commits; código (identificadores y comentarios) en inglés.
 - **RNF-09 Usabilidad:** pocas pantallas, lenguaje claro, toda decisión de la IA con justificación visible.
 - **RNF-10 Portabilidad:** monorepo con el contenido del marco en una carpeta propia que no importa nada del código, de modo que pueda extraerse a otro repositorio sin cambios; repositorio y proveedor de identidad intercambiables por configuración.

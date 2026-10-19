@@ -60,3 +60,14 @@ A"
 **Interpretación de la IA:** H1=A (épicas por fase), H2=B (persona única Admin), H3=A (Dado/Cuando/Entonces), H4=A (historias de 1–2 días).
 **Acción de la IA:** `user-stories/personas.md` y `user-stories/stories.md` generados; tabla de trazabilidad verificada por script: todos los RF y RNF cubiertos.
 **Estado:** esperando aprobación de las historias.
+
+## 2026-10-19 · Aprobación de historias
+**Entrada del usuario:** "1. Esta bien
+2. Esta bien
+3. Tengo autorización de usar los documentos
+
+
+Si, apruebo las historias"
+**Interpretación de la IA:** sin web en fases 1–3: aceptado; garantías de armonía: aceptadas; Gartner: uso autorizado → se quita el bloqueo. Historias aprobadas.
+**Acción de la IA:** RNF-07 y HU-1.2 actualizados (registro de origen en vez de bloqueo). Plan de ejecución en `inception/plans/execution-plan.md`: diseño de aplicación y unidades sí; 5 unidades (U0–U4) más el piloto; etapas de Construction por unidad.
+**Estado:** esperando aprobación del plan de ejecución.
