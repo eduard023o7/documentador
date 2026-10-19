@@ -3,7 +3,7 @@
 **Proyecto:** documentador — MVP plataforma de lineamientos y estándares
 **Tipo:** greenfield
 **Inicio:** 2026-10-19
-**Etapa actual:** INCEPTION · Análisis de requisitos — esperando respuestas a `inception/requirements/requirement-verification-questions.md`
+**Etapa actual:** INCEPTION · Análisis de requisitos — esperando respuestas a `inception/requirements/requirement-followup-questions.md`
 
 ## Detección del workspace
 - Repositorio vacío (sin commits ni código previo) → greenfield; se omite ingeniería inversa.
@@ -14,8 +14,8 @@
 ### INCEPTION
 - [x] Detección del workspace
 - [-] Ingeniería inversa (no aplica: greenfield)
-- [ ] Análisis de requisitos — borrador v0 listo; preguntas pendientes
-- [ ] Historias de usuario (condicional; ver Q12)
+- [ ] Análisis de requisitos — v1 con respuestas iniciales; 7 preguntas de seguimiento pendientes
+- [ ] Historias de usuario (condicional; ver S7)
 - [ ] Planificación del flujo de trabajo
 - [ ] Diseño de aplicación (condicional)
 - [ ] Generación de unidades de trabajo (condicional)
@@ -27,4 +27,4 @@ Se define en la planificación del flujo de trabajo.
 Fuera del alcance inicial.
 
 ## Extensiones
-- Reglas de seguridad como bloqueantes: pendiente (Q13)
+- Reglas de seguridad como bloqueantes: pendiente (S7)

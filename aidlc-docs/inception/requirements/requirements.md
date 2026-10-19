@@ -1,6 +1,19 @@
 # Requisitos — MVP plataforma de lineamientos y estándares
 
-**Estado:** borrador v0, derivado de `fuente-definicion-mvp.md`. Pendiente de las respuestas en `requirement-verification-questions.md`; los puntos marcados **[PREGUNTA Qn]** dependen de ellas.
+**Estado:** borrador v1 (2026-10-19). Incorpora las respuestas de `requirement-verification-questions.md`; los puntos marcados **[SEGUIMIENTO Sn]** dependen de `requirement-followup-questions.md`.
+
+## 0. Decisiones tomadas
+
+| # | Decisión |
+|---|---|
+| Q1 | **Monorepo**: código y contenido del marco en este repositorio, en carpetas separadas |
+| Q3 | El ciclo AI-DLC cubre **todo el MVP** (fases 0 a 5) |
+| Q4 | La IA **redacta bajo demanda**; antes se hacen la planificación y las definiciones (dominios, principios, estructura). Sin redundancia entre documentos, referencias cruzadas y mapa de relaciones como grafo |
+| Q5 | La aprobación final la da **el revisor** |
+| Q6 | Los dominios son **insumo de la planificación**; OT puede ser dominio, aún por definir. No se fijan dominios en el código |
+| Q7 | Umbral de calidad: **90 %** de coincidencia con los casos de prueba |
+| Q8 | **Eduardo es dueño de todo el MVP**, incluidos los fundacionales |
+| Q10 | Disponibles: **cuenta AWS** y **plantilla Word corporativa**. Pendientes: sitios aprobados, contrato de Gartner |
 
 ## 1. Análisis de la solicitud
 
@@ -23,8 +36,9 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 
 | Actor | Descripción |
 |---|---|
-| Administrador del marco | Único que edita el perfil del marco. También construye y opera la solución |
-| Arquitecto | Cinco arquitectos (datos, IA, infraestructura, seguridad, empresarial). Proponen, revisan y aprueban en su dominio |
+| Administrador del marco | Único que edita el perfil del marco. También construye y opera la solución. En el MVP: Eduardo, dueño de todo |
+| Revisor | Da la aprobación final de un documento, del mapa o de un paquete de cambios **[SEGUIMIENTO S4]** |
+| Arquitecto | Propone necesidades, pide redacciones y revisa **[SEGUIMIENTO S5: si en el MVP hay más usuarios que Eduardo]** |
 | Agentes de IA | Investigador, Taxonomista, Redactor, Validador, Contraste, Admisión, Analista de impacto, Publicador |
 
 ## 4. Requisitos funcionales
@@ -32,7 +46,7 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 ### Modelo documental y mapa
 - **RF-01** El mapa clasifica cada documento en uno de tres tipos (fundacional, lineamiento, estándar) aplicando el test de clasificación en orden; los temas que describen pasos de ejecución o cambian más de una vez al año quedan registrados como pendientes fuera del MVP.
 - **RF-02** El mapa es una matriz de dominios × niveles (0 principios — no son documentos —, 1 fundacionales, 2 lineamientos, 3 estándares).
-- **RF-03** Los dominios los propone el equipo; un agente los evalúa y sugiere ajustes; el equipo los aprueba. **[PREGUNTA Q6]**
+- **RF-03** Los dominios (y si OT es uno de ellos) son insumo de la planificación: los ingresa el usuario, un agente los evalúa y sugiere ajustes, y el revisor los aprueba. El código no asume ningún dominio fijo.
 - **RF-04** Cada documento tiene una ficha con: ID, título, tipo, dominio, padre, relaciones, frontera de alcance (incluye/excluye), justificación de tipo, fuentes, impacto (nº de dependientes), prioridad y estado.
 - **RF-05** IDs: `FUN-<DOM>-NNN`, `LIN-<DOM>-NNN`, `EST-<DOM>-<TEC>-NNN`; reglas internas `<ID>.RNN`.
 - **RF-06** El sistema valida automáticamente las reglas de coherencia: padre único (lineamiento→dominio, estándar→lineamiento), fronteras de alcance sin solapes, relaciones tipadas (`deriva_de`, `depende_de`, `complementa`, `reemplaza`), dueño por preocupación (otro dominio puede endurecer, nunca relajar), precedencia principio > fundacional > lineamiento > estándar, y sin ciclos en `depende_de`.
@@ -47,7 +61,7 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 ### Construcción de documentos
 - **RF-12** Plantilla inicial: ficha, propósito, alcance y aplicabilidad, documentos relacionados, definiciones, reglas, especificación técnica (solo estándares), excepciones, cumplimiento y verificación, referencias, control de cambios.
 - **RF-13** Cada regla tiene: ID, nivel (DEBE/DEBERÍA/PUEDE), enunciado, justificación, cómo se verifica y fuentes. Lo que viene de otro documento se referencia por ID, nunca se copia.
-- **RF-14** Orden de redacción por el grafo: fundacionales → lineamientos → estándares. Un documento se redacta solo si su padre está aprobado y sus dependencias están al menos en revisión.
+- **RF-14** **Redacción bajo demanda:** el usuario elige un documento del mapa aprobado y pide su redacción; no hay redacción masiva del mapa. El orden recomendado sigue el grafo (fundacionales → lineamientos → estándares). Comportamiento si el padre o las dependencias no están aprobados: **[SEGUIMIENTO S3]**.
 - **RF-15** Ciclo de vida: propuesto → en redacción → en validación → en revisión humana → aprobado → obsoleto. Revisión anual de cada aprobado.
 - **RF-16** Versionado `mayor.menor.parche` (mayor: cambia/elimina una regla DEBE; menor: agrega reglas o cambia DEBERÍA/PUEDE; parche: redacción). Cada versión registra autor, fecha, motivo y paquete de cambios. El mapa completo también se versiona.
 - **RF-17** El Markdown en Git es la fuente de verdad. Word se genera desde Markdown con la plantilla corporativa; PDF desde Word. Los no aprobados llevan marca de agua "Borrador".
@@ -64,7 +78,7 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 - **RF-24** Insumos: principios (formulario de texto), contexto de arquitectura empresarial (formulario estructurado + diagrama adjunto), fuentes de conocimiento (sitios aprobados y PDFs) y documentos existentes (PDF/Word, solo para contraste).
 - **RF-25** El mapa se genera y valida sin ver los documentos existentes; luego el contraste muestra coincidencias, omisiones y temas nuevos. Ninguna diferencia se incorpora sola.
 - **RF-26** Toda fuente citada debe existir y estar disponible; el validador lo comprueba.
-- **RF-27** Búsqueda semántica sobre los PDFs con cita a la página de origen; búsqueda web limitada a sitios aprobados. **[PREGUNTA Q9]**
+- **RF-27** Búsqueda semántica sobre los PDFs con cita a la página de origen; búsqueda en los sitios aprobados. Mecanismo: **[SEGUIMIENTO S6]** (recomendado: rastreador de Bedrock Knowledge Bases limitado a los sitios aprobados).
 
 ### Visualización y seguimiento
 - **RF-28** Vista **Grafo**: nodos (forma por tipo, color por estado), aristas por tipo de relación, filtros por dominio/tipo/estado, resaltado de dependientes al elegir un nodo.
@@ -76,11 +90,16 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 
 ### Acceso y repositorio
 - **RF-34** Inicio de sesión con usuario y contraseña; dos roles: administrador del marco y arquitecto. Debe poder federarse con Entra ID más adelante sin cambiar la aplicación.
-- **RF-35** La web oculta Git: cada aprobación se convierte en un commit con autor, fecha y motivo; cada paquete de cambios es una rama que se fusiona al aprobarse; las versiones son etiquetas (`<ID>@x.y.z`, `mapa@x.y.z`). **[PREGUNTA Q2]**
+- **RF-35** La web oculta Git: cada aprobación se convierte en un commit con autor, fecha y motivo; cada paquete de cambios es una rama que se fusiona al aprobarse; las versiones son etiquetas (`<ID>@x.y.z`, `mapa@x.y.z`). Proveedor: **[SEGUIMIENTO S1]** (recomendado: GitHub en el MVP).
 - **RF-36** El acceso al repositorio de contenido pasa por un adaptador; cambiar de cuenta (personal → corporativa) o de proveedor es solo configuración.
 
 ### Calidad de los agentes
-- **RF-37** Un conjunto de 30–50 temas reales clasificados a mano (tipo, dominio, padre) se usa como evaluación automática en cada cambio de prompts o reglas, midiendo la coincidencia contra un umbral. **[PREGUNTA Q7]**
+- **RF-37** Un conjunto de 30–50 temas reales clasificados a mano (tipo, dominio, padre) se usa como evaluación automática en cada cambio de prompts o reglas; la fase 1 se aprueba con **≥ 90 %** de coincidencia. Quién arma los casos: **[SEGUIMIENTO S5]**.
+
+### Sin redundancia y con referencias (refuerzo de Q4)
+- **RF-38** **Detección de redundancia:** antes de proponer un documento o una regla, el taxonomista y el redactor consultan el mapa y las reglas existentes; el validador marca como observación toda regla que repita el significado de otra ya existente (comparación semántica) y propone reemplazarla por una referencia a su ID.
+- **RF-39** **Referencias navegables:** toda referencia a otro documento o regla (`<ID>` o `<ID>.RNN`) se valida contra el mapa (debe existir y no estar obsoleta) y se muestra como enlace en la web, en Word y en PDF.
+- **RF-40** **Mapa como grafo:** el mapa (documentos + relaciones tipadas) se construye leyendo las fichas y es la fuente única que usan los agentes para decidir dónde vive cada tema, y que muestran las vistas de grafo y por niveles.
 
 ## 5. Requisitos no funcionales
 
@@ -93,7 +112,8 @@ Construir de principio a fin los documentos corporativos de arquitectura del gru
 - **RNF-07 Licencias:** no cargar contenido de Gartner hasta revisar el contrato.
 - **RNF-08 Idioma:** español en contenido, interfaz y mensajes.
 - **RNF-09 Usabilidad:** pocas pantallas, lenguaje claro, toda decisión de la IA con justificación visible.
-- **RNF-10 Portabilidad:** el contenido nunca depende de la aplicación (repositorios separados); repositorio y proveedor de identidad intercambiables por configuración.
+- **RNF-10 Portabilidad:** monorepo con el contenido del marco en una carpeta propia que no importa nada del código, de modo que pueda extraerse a otro repositorio sin cambios; repositorio y proveedor de identidad intercambiables por configuración.
+- **RNF-12 Commits de contenido:** las aprobaciones generan commits en el mismo repositorio que el código; el despliegue (Amplify, CDK) debe ignorar cambios solo de contenido para no reconstruir la aplicación en cada aprobación.
 - **RNF-11 Calidad medible:** pytest + evaluación automática con los casos de prueba.
 
 ## 6. Stack de referencia (del insumo)
@@ -106,6 +126,7 @@ Guías, procedimientos y catálogos · publicación web para toda la empresa · 
 
 ## 8. Inconsistencias detectadas en el insumo
 
-1. El plan de fases menciona **Azure Repos** en la fase 4, mientras el resto del documento usa **GitHub**. → Q2
-2. El insumo define dos repositorios (`plataforma-lineamientos` y `marco-arquitectura`); este repositorio se llama `documentador`. → Q1
-3. La fase 0 es mayormente definición del equipo (perfil del marco y casos de prueba), no código; conviene acordar qué parte construimos aquí. → Q3, Q4
+1. El plan de fases menciona **Azure Repos** en la fase 4, mientras el resto del documento usa **GitHub**. → S1 (pendiente)
+2. El insumo define dos repositorios; se resolvió con un **monorepo** (Q1).
+3. El insumo fija un orden de redacción por el grafo; la decisión de redactar **bajo demanda** cambia ese orden a recomendación. → S3 (pendiente)
+4. El insumo habla de cinco arquitectos aprobando por dominio; la respuesta indica un dueño único y un revisor. → S4, S5 (pendiente)
