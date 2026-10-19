@@ -8,16 +8,16 @@
 A) El correo de tu cuenta
 B) Otro (indícalo)
 
-[Answer]:
+[Answer]: A — correo de la cuenta (se pasa al desplegar, no se guarda en el repositorio)
 
 ### I2. ¿Cómo entras a la cuenta AWS desde tu equipo?
 A) IAM Identity Center (SSO) con un rol
 B) Usuario IAM con llaves de acceso
 C) Aún no lo tengo configurado (incluyo la guía)
 
-[Answer]:
+[Answer]: B — usuario IAM con llaves de acceso
 
 ## Pasos
 - [x] `infrastructure-design.md`
 - [x] `deployment-architecture.md`
-- [ ] Presentar para aprobación
+- [x] Presentar para aprobación (aprobado el 2026-10-19)

@@ -120,3 +120,12 @@ Si, apruebo las historias"
 **Entrada del usuario:** "si"
 **Acción de la IA:** diseño NFR aprobado. Diseño de infraestructura de U0: stack `DocumentadorBase` (presupuesto, S3, DynamoDB, parámetros SSM, política IAM operador), pruebas de plantilla y pasos de despliegue. Dos datos de despliegue pedidos (I1 correo, I2 acceso AWS), no bloqueantes.
 **Estado:** esperando aprobación del diseño de infraestructura.
+
+## 2026-10-19 · Datos de despliegue y aprobación del diseño de infraestructura de U0
+**Entrada del usuario:** "A
+B
+
+Si, apruebo"
+**Interpretación de la IA:** I1=A (correo de la cuenta), I2=B (usuario IAM con llaves); diseño de infraestructura aprobado.
+**Acción de la IA:** plan de generación de código de U0 en `construction/plans/u0-fundacion-code-generation-plan.md` (11 pasos con casillas).
+**Estado:** esperando aprobación del plan de código.
